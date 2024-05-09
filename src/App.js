@@ -54,7 +54,7 @@ function App() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const checkUserResponse =  await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/${username}/`, { mode: 'cors' });
+      const checkUserResponse =  await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/${username}/`, { mode: 'no-cors' });
 
       if (checkUserResponse.ok) {
         // User exists, check password
