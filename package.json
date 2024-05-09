@@ -1,5 +1,6 @@
 {
   "private": true,
+  "proxy": "https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -33,4 +34,5 @@
       "last 1 safari version"
     ]
   }
+
 }

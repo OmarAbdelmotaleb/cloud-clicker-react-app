@@ -14,7 +14,7 @@ function App() {
       if (isLoggedIn) { // Only fetch if logged in 
         if (isLoggedIn) { 
           try {
-            const response = await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/${username}/`); // Assuming an endpoint to get the current user
+            const response = await fetch(`/api/users/${username}/`); // Assuming an endpoint to get the current user
             if (response.ok) {
               const data = await response.json();
               setCount(data.clicks);
@@ -32,7 +32,7 @@ function App() {
 
   const handleClick = async () => { 
     try {
-      const response = await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/${username}/`, { // Update clicks for the logged-in user 
+      const response = await fetch(`/api/users/${username}/`, { // Update clicks for the logged-in user 
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ function App() {
     e.preventDefault();
     // ... (add your fetch logic for '/api/login/')
     try {
-      const checkUserResponse =  await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/${username}/`);
+      const checkUserResponse =  await fetch(`/api/users/${username}/`);
 
       if (checkUserResponse.ok) {
         // User exists, check password
@@ -72,7 +72,7 @@ function App() {
         }
       } else {
         // setLoginError(true); // User not found
-        const createUserResponse = await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/`, {
+        const createUserResponse = await fetch(`/api/users/`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
