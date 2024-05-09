@@ -81,6 +81,7 @@ function App() {
 
         if (createUserResponse.ok) {
           setIsLoggedIn(true);
+          setCount(0);
           setLoginError(false);
         } else {
           setLoginError(true);
