@@ -55,7 +55,7 @@ function App() {
     e.preventDefault();
     // ... (add your fetch logic for '/api/login/')
     try {
-      const checkUserResponse =  await fetch(`/api/users/${username}/`, { mode: 'no-cors'});
+      const checkUserResponse =  await fetch(`/api/users/${username}/`);
 
       if (checkUserResponse.ok) {
         // User exists, check password
