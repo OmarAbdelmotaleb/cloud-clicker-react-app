@@ -55,7 +55,7 @@ function App() {
     e.preventDefault();
     // ... (add your fetch logic for '/api/login/')
     try {
-      const checkUserResponse =  await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/${username}/`);
+      const checkUserResponse =  await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/${username}/`, { mode: 'no-cors' });
 
       if (checkUserResponse.ok) {
         // User exists, check password
