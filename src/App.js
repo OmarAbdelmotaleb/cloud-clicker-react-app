@@ -14,7 +14,7 @@ function App() {
       if (isLoggedIn) { // Only fetch if logged in 
         if (isLoggedIn) { 
           try {
-            const response = await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/${username}/`); // Assuming an endpoint to get the current user
+            const response = await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/${username}/`, { mode: 'no-cors' }); // Assuming an endpoint to get the current user
             if (response.ok) {
               const data = await response.json();
               setCount(data.clicks);
@@ -33,6 +33,7 @@ function App() {
   const handleClick = async () => { 
     try {
       const response = await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/${username}/`, { // Update clicks for the logged-in user 
+        mode: 'no-cors',
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -72,7 +73,8 @@ function App() {
         }
       } else {
         // setLoginError(true); // User not found
-        const createUserResponse = await fetch(`/api/users/`, {
+        const createUserResponse = await fetch(`https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app/api/users/`, {
+          mode: 'no-cors',
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
