@@ -15,7 +15,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://django-website-qkbcqxh0v-omars-projects-d249164c.vercel.app",
   "eslintConfig": {
     "extends": [
       "react-app",
